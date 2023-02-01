@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       body{
+        background: lemonchiffon;
+       }
+       textarea{
+        background: aqua;
+       }
+       button{
+        background: lime;
+        font-size: 15px;
+        font-weight: bold;
+       }
+       h3{
+        color:blue;
+       }
+       td{
+        color:rgb(158, 73, 87);
+       }
+       input:hover{
+        color:white;
+        background: black;
+       }
+    </style>
+</head>
+
+<body>
+    <form>
+        <!-- <form action="보내는 서버 주소">-->
+        <h3>검색할 단어를 입력하세요.</h3>
+        <hr>
+        검색할단어 <input type="text" name="find" value="자동차">
+        <button>검색</button>
+    </form>
+    <hr color="red">
+    <form action="check">
+        <h3>로그인 화면</h3>
+        <table color="">
+            <tr>
+                <td>아이디</td>
+                <td><input type="text" name="id" class="login"></td>
+            </tr>
+            <tr><td>패스워드</td>
+                <td><input type="password" name="password" class="login"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="submit" value="로그인"></td>
+            </tr>
+        </table>
+                
+       
+        
+    </form>
+    <hr color="red">
+   
+    <form action="member">
+         <h3>회원가입 화면</h3>
+         <table>
+            <tr>
+                <td>가입할 ID</td>
+                <td><input type="text" name="id"></td>
+            </tr>
+            <tr><td>패스워드 입력</td>
+                <td><input type="password" name="pw"></td>
+            </tr>
+            <tr><td>패스워드 확인</td>
+                <td><input type="password" name="pw" ></td>
+            </tr>
+            <tr>
+                <td>가입할 이름</td>
+                <td><input type="text" 
+                           name="id"
+                           placeholder="성과이름을 순서대로 붙여쓰세요" ></td>
+            </tr>          
+        </table>
+        성별
+            <input type="radio" name="gender" value="male" checked>남자
+            <input type="radio" name="gender" value="female">여자
+            <br>
+        취미 <input type="checkbox" name="hobby" value="run">달리기
+            <input type="checkbox" name="hobby" value="youtube" checked>동영상시청
+            <input type="checkbox" name="hobby" value="internet">인터넷 서핑
+        <br>
+        전화번호 통신사
+        <select name="tel">
+            <option value="sktelecom">SKT</option>
+            <option value="KT">KT</option>
+            <option value="LG">LGU+</option>
+            <option value="etctele">알뜰폰</option>
+        </select>
+        <input type="number"name="number" placeholder="-없이 숫자로 이어서 쓰세요">
+        <br>
+        <table>
+            <tr>
+                <td>생년월일</td>
+                <td><input type="date"></td>
+            </tr>
+            <tr>
+                <td>가입한 시기</td>
+                <td><input type="datetime-local"></td>
+            </tr>
+            <tr>
+                <td>가입한 주</td>
+                <td><input type="week" name="week"></td>
+            </tr>
+        </table>
+        하고 싶은 말
+        <br>
+        <textarea name="word"  
+                  cols="30" 
+                  rows="10"
+                  placeholder="100글자 이내로 써주세요.">
+                </textarea>
+    </form>
+</body>
+
+</html>
