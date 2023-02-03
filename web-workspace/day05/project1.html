@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>jQuery UI Accordion - Default functionality</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script>
+      function book1(){
+        num1=document.getElementById('num1').value
+        result_tag=document.getElementById('result')
+        result_tag.innerHTML = "슬램덩크 "+ num1+"명 예매되었습니다."
+      }
+      function book2(){
+        num2=document.getElementById('num2').value
+        result_tag=document.getElementById('result')
+        result_tag.innerHTML = "아바타2 "+ num2+"명 예매되었습니다."
+      }
+      function book3(){
+        num3=document.getElementById('num3').value
+        result_tag=document.getElementById('result')
+        result_tag.innerHTML = "타이타닉 "+ num3+"명 예매되었습니다."
+      }
+      function book4(){
+        num4=document.getElementById('num4').value
+        result_tag=document.getElementById('result')
+        result_tag.innerHTML = "바빌론 "+ num4+"명 예매되었습니다."
+      }
+    </script>
+    <link rel="stylesheet" href="out.css">
+  </head>
+  <body>
+    
+    <form>
+      영화나 극장 위치 검색하기 <input type="text" id="find" value="슬램덩크">
+  </form><a href="slamdunk.html"><button id="find_btn">검색</button></a>
+    <h1 align="center">박스오피스</h1>
+    <hr color='blue'>
+    <center>
+        <table border="1">
+            <tr>
+                <td colspan="3"><img src="slamdunk.jpg" alt=""></td>
+                
+                <td colspan="3"><img src="avatar.jpg" alt=""></td>
+                
+                <td colspan="3"><img src="titanic.jpg" alt=""></td>
+                
+                <td colspan="3"><img src="babilon.jpg" alt=""></td>
+            </tr>
+            <tr></tr>
+            <tr>
+                <td>슬램덩크</td>
+                <td>인원:<input type="인원" id="num1" width="50px"></td>
+                <td><button onclick="book1()" id="b1">예매</button></td>
+                <td>아바타2</td>
+                <td>인원:<input type="인원" id="num2"></td>
+                <td><button onclick="book2()" id="b2">예매</button></td>
+                <td>타이타닉</td>
+                <td>인원:<input type="인원" id="num3"></td>
+                <td><button onclick="book3()" id="b3">예매</button></td>
+                <td>바빌론</td>
+                <td>인원:<input type="인원" id="num4"></td>
+                <td><button onclick="book4()" id="b4">예매</button></td>
+            </tr>
+        </table>
+    </center>
+    <hr height="10px">
+   <div id="result">
+
+   </div>
+    
+  </body>
+</html>

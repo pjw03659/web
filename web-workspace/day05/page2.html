@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+      function trip(){
+          space=document.getElementById('space').value
+          month=document.getElementById('month').value
+          choice=document.getElementById('choice').value
+          if (choice=='1'){
+            cost=30000
+            vehicle="비행기"
+          } else if (choice=='2'){
+            cost=10000
+            vehicle="버스"
+          } else if (choice=='3'){
+            cost=50000
+            vehicle="자가용"
+          } else {
+            alert("잘못 입력하셨습니다.")
+          }
+          result_tag=document.getElementById('result')
+          result_tag.innerHTML="나는 "+month+"월에 "+space+"(으)로 "+vehicle+"(을)를 타고 여행을 갈꺼에요. 비용은 "+ cost+"원 입니다."
+    }
+    </script>
+</head>
+<body>
+    <hr color="red">
+    여행가고 싶은 곳: <input type="text" value="부산" id="space"><br>
+    몇 월에 갈까요?: <input type="text" value="1" id="month"><br>
+    무얼 타고 갈까요?: 1)비행기(30000), 2)버스(10000), 3)자가용(50000)
+    <input type="text" id="choice"> <br>
+    <button onclick="trip()">여행 계획 버튼</button>
+    <hr color="blue">
+    <div id="result">
+
+    </div>
+</body>
+</html>

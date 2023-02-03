@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function pay(){
+            com=document.getElementById('com').value
+            choice=document.getElementById('choice').value
+            money=document.getElementById('money').value
+            if(choice=='1'){
+                final_money=parseInt(money);
+            } else if (choice=='2'){
+                final_money=parseInt(money)+1000;
+            } else {
+                final_money=parseInt(money)+500;
+            }
+            result_tag=document.getElementById('result')
+            result_tag.innerHTML = com +"에서 <font color='red'> "+final_money +"</font>원을 결제수단 "+choice+"번으로 결제했습니다."
+        }
+    </script>
+</head>
+<body>
+    <hr color="red">
+    구매상점: <input type="text" value="멀티샵" id="com"><br>
+    결제금액: <input type="text" value="10000" id="money"><br>
+    결제수단: 1)계좌이체, 2)신용카드, 3)휴대폰결제
+    <input type="text" id="choice"> <br>
+    <button onclick="pay()">결제 처리 버튼</button>
+    <hr color="blue">
+    <div id="result">
+
+    </div>
+</body>
+</html>
