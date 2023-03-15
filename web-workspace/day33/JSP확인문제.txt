@@ -1,0 +1,42 @@
+1. 웹 프로그램의 3단계
+-client, server, db
+
+2.웹서버측의 구성: 웹서버+WAS, 2개의 각각의 역할
+-클라이언트의 요청을 받아서 적절히 응답
+단순한 요청(html)은 찾아서 응답
+-복잡한 요청(Java, php, python,c#)은 WAS가 처리
+
+3.WAS는 무엇의 약자?
+-Web Application Server
+
+4.웹서버 종류?
+-apache, nginx(엔진엑스), IIS
+
+5.어떤 자바 WAS를 써봤나요?
+-tomcat
+
+6.JDBC 4단계를 정리해보세요/
+-1)driver 설정 2)db연결 3)sql문 생성 4)db로 sql문 전송
+
+7.mysql과 oracle의 기본 port는?
+-mysql: 3306
+-oracle: 1521
+
+8.JSP는 무엇의 약자?
+-Java Server Pages
+
+9.servlet과 JSP의 관계?
+-JSP는 서블릿이라 자바프로그램으로 변환되어 실행
+
+10.http의 용도, 무엇의 약자?
+-클라이언트와 웹서버의 통신 규칙(규약)
+-hyperText Transfer protocol
+
+11.http의 구성요소 2가지
+-header+body
+
+12.브라우저가 보낼 때의 http헤더와 바디
+-header(요청주소+get(데이터)), body(post(데이터))
+
+13.웹서버가 보낼 때의 http헤더와 바디
+-header(상태code), body(처리결과)
