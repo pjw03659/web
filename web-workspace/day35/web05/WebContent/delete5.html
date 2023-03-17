@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+body { /* 컨트롤 + / - 자동주석, 태그선택! */
+	background: #037BFC;
+}
+
+button {
+	background: #18DE02;
+}
+
+.t1 { /* .은 클래스 선택!, 여러개선택!  */
+	background: yellow;
+	width: 150px;
+	text-align: center;
+}
+</style>
+</head>
+<body>
+<h3>Playlist 삭제 페이지</h3>
+	<hr>
+	<a href="list5.jsp">
+		<button id="b1">Playlist로</button>
+	</a>
+	<form action="delete5.jsp" method="get">
+		<table border="1">
+			<tr>
+				<td class="t1">삭제할 id :</td>
+				<td><input name="id"></td>
+			</tr>
+			<tr>
+				<td colspan="2" class="t1">
+					<button id="b2">playlist 삭제할 id 데이터 전송</button>
+				</td>
+			</tr>
+		</table>
+		
+	</form>
+</body>
+</html>

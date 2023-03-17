@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+</script>
+<style type="text/css">
+body { /* 컨트롤 + / - 자동주석, 태그선택! */
+	background: #18de02;
+}
+
+button {
+	background: pink;
+}
+
+.t1 { /* .은 클래스 선택!, 여러개선택!  */
+	background: yellow;
+	width: 150px;
+	text-align: center;
+}
+
+#b1 { /* #은 아이디 선택!, 특정한 것 한 개만 선택! */
+	color: red;
+}
+#b2{
+	color: blue;
+	
+}
+</style>
+</head>
+<body>
+	<h3>Playlist 추가 페이지</h3>
+	<hr>
+	<a href="list5.jsp">
+		<button id="b1">Playlist로</button>
+	</a>
+	<form action="insert5.jsp">
+		<table border="1">
+			<tr>
+				<td class="t1">노래 제목 :</td>
+				<td><input name="title"></td>
+			</tr>
+			<tr>
+				<td class="t1">아티스트 :</td>
+				<td><input name="artist"></td>
+			</tr>
+			<tr>
+				<td class="t1">장르 :</td>
+				<td><input name="genre"></td>
+			</tr>
+			<tr>
+				<td class="t1">이미지 :</td>
+				<td><input name="alb_img"></td>
+			</tr>
+			<tr>
+				<td colspan="2" class="t1">
+					<button id="b2">Playlist 데이터 전송</button>
+				</td>
+			</tr>
+		</table>
+		<!-- 입력한 값들이 서버(톰킷)으로 전달될때는 form태그 안에 있어야 함. -->
+		<!-- 보충내용: <input name="data"> -->
+	</form>
+
+	
+	<!-- http://localhost:8898/web00/insert.jsp?id=dddd&pw=ddd&name=ddd&tel=ddddd -->
+	
+	
+	
+	
+	
+</body>
+</html>
