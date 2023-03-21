@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function login() {
+		id = document.getElementById('user').value
+		pw = document.getElementById('pw').value
+	
+		resultTag=document.getElementById("result")
+		if (id == 'root' && pw == '1234') {
+			resultTag.innerHTML='<img src=img/yes.jpg width=200 height=200>'
+			
+		} else {
+			resultTag.innerHTML='<img src=img/no.jpg width=200 height=200>'
+		}
+	}
+	
+	function age() {
+		year_birth = document.getElementById('year').value
+		year_now = 2023
+		resultTag=document.getElementById("result")
+		age1 = parseInt(year_now) - parseInt(year_birth)
+		resultTag.innerHTML='나이는 '+age1+'살 입니다.'
+	}
+	
+	function rec() {
+		resultTag=document.getElementById("result")
+		width = document.getElementById('w').value
+		height = document.getElementById('h').value
+		space= parseFloat(width)*parseFloat(height)
+		resultTag.innerHTML='사각형의 넓이는 '+space+'입니다.'
+	}
+	
+	function id_check() {
+		resultTag=document.getElementById("result")
+		idValue = document.getElementById('user').value
+		if(idValue.length < 5){
+			resultTag.innerHTML='5글자 이상 입력해주세요.'
+		}
+	}
+	
+	function pw_check(){
+		resultTag=document.getElementById("result")
+		pw = document.getElementById('pw').value
+		pw2 = document.getElementById('pw2').value
+		if(pw==pw2){
+			resultTag.innerHTML='패스워드 확인 완료.'
+		}else {
+			resultTag.innerHTML='패스워드를 확인해주세요'
+		}
+	}
+</script>
+</head>
+<body>
+	아이디: <input id="user" value="root">
+	<button onclick="id_check()">글자수 체크</button> <br> 
+	
+	패스워드:<input id="pw" value="1234"><br>
+	패스워드확인:<input id="pw2" value="1234">
+	<button onclick="pw_check()">패스워드 확인</button><br>
+	<button onclick="login()">로그인 처리</button>
+
+<hr>
+나이계산(태어난 년도): <input id='year'> <br>
+<button onclick="age()">나이 계산 처리</button>
+
+<hr>
+가로길이: <input id='w'> <br>
+세로길이: <input id='h'> <br>
+<button onclick="rec()">사각형의 면적 구하기 처리(실수 입력)</button>
+<hr>
+<div id="result" style="color:red; background: yellow; width: 500px; height: 50px; font-size: 30px">결과넣는 곳.</div>
+</body>
+</html>

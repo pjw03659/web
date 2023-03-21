@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function bag() {
+		thing = document.getElementById('thing1').value
+		
+		if(thing=='핸드폰'){
+			img = '<img src=img/phone.jpg width=200 height=200>'
+		}else if(thing=='시계'){
+			img = '<img src=img/watch.jpg width=200 height=200>'
+		}else{
+			img = '<img src=img/other.jpg width=200 height=200>'
+		}
+		
+		resultTag=document.getElementById("result")
+		resultTag.innerHTML=img
+	}
+
+	function bag2() {
+		thing2 = document.getElementById('thing2').value
+		
+		if(thing2=='시계'){
+			location.href = "https://www.apple.com/kr/watch/"
+		}else if(thing2=='가방')
+			location.href = "https://www.celine.com/ko-kr/home"
+		}else{
+			location.href = "https://www.naver.com"
+		}
+		
+		
+	}
+	
+</script>
+</head>
+<body>
+	가장 중요한 물건: <input id="thing1" value="핸드폰"><br>
+	두번째 중요한 물건:<input id="thing2" value="시계"><br>
+	
+	<button onclick="bag()">가장 중요한 물건 확인</button><br>
+	<button onclick="bag2()">두번쨰 중요한 물건 확인</button><br>
+<hr>
+<div id="result" style="color:red; background: yellow; width: 500px; height: 50px; font-size: 30px">결과넣는 곳.</div>
+</body>
+</html>
