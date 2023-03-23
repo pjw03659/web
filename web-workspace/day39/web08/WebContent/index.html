@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.6.4.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#b1').click(function() {
+			in2=$('#in2').val()
+			in3=$('#in3').val()
+			divTag=$('#result')
+			if (in2==1 && in3==1){
+				divTag.text("우산 꼭 챙기세요.")
+			}else{
+				divTag.text("우산 확인하세요.")
+			}
+		})//b1
+		
+		
+	})
+</script>
+</head>
+<body>
+비가 오나요? 1)온다 2)안온다  <input id='in2' value='1' style="background:yellow"><br>
+구름이 많은 가요? 1)많다 2)아니다. <input id='in3' value='1' style="background:yellow" ><br>
+<button id='b1'>결과</button>
+<hr color="red">
+<div id="result"></div>	
+</body>
+</html>
