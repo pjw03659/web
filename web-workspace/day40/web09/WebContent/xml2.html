@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.6.4.js"></script>
+<script type="text/javascript">
+	$(function() { 
+	
+		$('#b1').click(function() {
+			$.ajax({
+				url: "data/dataset2.xml",
+				success: function(doc) {
+					alert("xml요청 성공>> " + doc)
+					list = $(doc).find('record') //find의 결과는 여러개(배열)
+					alert(list.length)
+					for (i = 0; i < list.length; i++) { // 타입 상관없어서 안적어줘도 된다
+						id = $(list[i]).find('id').text()
+						model = $(list[i]).find('model').text()
+						color = $(list[i]).find('color').text()
+						money = $(list[i]).find('money').text()
+						$('#result').append(id + ", " + 
+											model + ", " + 
+											color + ", " + 
+											money + "<br>")
+						//받은 데이터를 추출해서 db에 저장해두고 싶은 경우
+						//브라우저--> 웹서버--> db
+						//받은 데이터를 웹서버에게 넘겨주면 됨.
+						//비동기 통신이 필요!!!
+						$.ajax({
+							url:"mock2.jsp",
+							data: {
+								id : id,
+								model: model,
+								color : color,
+								money : money							
+							},
+							success : function() {
+								console.log('넣기 성공~!')
+							}//success
+						}) //ajax
+					}//for
+				}//success
+			})//ajax
+		})//b1
+		
+		$('#b2').click(function() {
+			$.ajax({
+				url: "data/dataset2.xml",
+				success: function(doc) {
+					alert("xml요청 성공>> " + doc)
+					list = $(doc).find('record') //find의 결과는 여러개(배열)
+					alert(list.length)
+					delte_id=$("#delete_id").text()
+						$('#result').append(delte_id + "번 id가 삭제되었습니다.")
+										
+						//받은 데이터를 추출해서 db에 저장해두고 싶은 경우
+						//브라우저--> 웹서버--> db
+						//받은 데이터를 웹서버에게 넘겨주면 됨.
+						//비동기 통신이 필요!!!
+						$.ajax({
+							url:"mock2.jsp",
+							data: {
+								id : delete_id
+													
+							},
+							success : function() {
+								console.log('넣기 성공~!')
+							}//success
+						}) //ajax
+					
+				}//success
+			})//ajax
+		})//b2
+		
+		
+	}) //$
+</script>
+</head>
+<body bgcolor="lime">
+<button style='color: blue; background: pink' id ="b1">XML받아오기-1</button><br>
+삭제할 ID 입력:<input id="delete_id">
+<button style='color: blue; background: yellow' id ="b2">삭제하기</button><br>
+
+
+<hr color="red">
+<div id="result"></div>
+</body>
+</html>
