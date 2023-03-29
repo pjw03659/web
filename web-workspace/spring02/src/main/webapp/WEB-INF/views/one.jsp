@@ -12,10 +12,10 @@ body {
 </style>
 </head>
 <body>
-게시글 검색 처리 요청이 완료되었습니다.<br>
-번호: ${bag.no}<br>
-제목: ${bag.title}<br>
-내용: ${bag.content}<br>
-작성자: ${bag.writer}<br>
+회원 검색 처리 요청이 완료되었습니다.<br>
+${bag.id}<br>
+${bag.pw}<br>
+${bag.name}<br>
+${bag.tel}<br>
 </body>
 </html>

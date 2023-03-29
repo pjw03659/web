@@ -7,15 +7,13 @@
 <title>Insert title here</title>
 <style>
 body {
-	background: beige;
+	background: lime;
 }
 </style>
 </head>
 <body>
-게시글 검색 처리 요청이 완료되었습니다.<br>
-번호: ${bag.no}<br>
-제목: ${bag.title}<br>
-내용: ${bag.content}<br>
-작성자: ${bag.writer}<br>
+<h3>로그인 실패</h3>
+<hr color="red">
+ 
 </body>
 </html>

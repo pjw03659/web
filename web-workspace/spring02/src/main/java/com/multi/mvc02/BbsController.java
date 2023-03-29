@@ -2,6 +2,7 @@ package com.multi.mvc02;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -35,8 +36,9 @@ public class BbsController {
 	}
 	
 	@RequestMapping("one2.multi")
-	public void one(int no) {
-		dao.one(no);
+	public void one(int no, Model model) {
+		BbsVO bag = dao.one(no);
+		model.addAttribute("bag",bag);
 	}
 	
 	@RequestMapping("list2.multi")

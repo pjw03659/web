@@ -1,7 +1,10 @@
 package com.multi.mvc02;
 
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -13,6 +16,20 @@ public class MemberController {
 	//멤버변수 + 멤버메서드
 	@Autowired
 	MemberDAO3 dao = new MemberDAO3();
+	
+	
+	
+	@RequestMapping("login")
+	public String login(MemberVO bag) {
+		System.out.println(bag);
+		int result = dao.login(bag);
+		if(result==1) {
+			return "ok";
+		} else {
+			return "no";
+		}
+	}
+	
 	@RequestMapping("insert")
 	public void insert(MemberVO bag) {
 		
@@ -34,7 +51,12 @@ public class MemberController {
 	}
 	
 	@RequestMapping("one")
-	public void one(MemberVO bag) {
+	public void one(String id, Model model) {
+		System.out.println("one 요청됨.");
+		System.out.println(id);
+		MemberVO bag = dao.one(id);
+		
+		model.addAttribute("bag",bag);
 		
 	}
 	
