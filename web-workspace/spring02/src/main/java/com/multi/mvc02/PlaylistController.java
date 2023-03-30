@@ -1,7 +1,5 @@
 package com.multi.mvc02;
 
-
-
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,35 +8,35 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class BookController {
+public class PlaylistController {
 
 	@Autowired
-	BookDAO dao = new BookDAO();
+	PlaylistDAO dao = new PlaylistDAO();
 	
-	@RequestMapping("insert3.multi")
-	public void insert(BookDTO bag) {
+	@RequestMapping("insert4.multi")
+	public void insert(PlaylistVO bag) {
 		dao.insert(bag);
 		System.out.println("insert 요청됨");
 		System.out.println(bag);
-		System.out.println(dao);
 	}
 	
-	@RequestMapping("update3.multi")
-	public void update(BookDTO bag) {
-		dao.update(bag);
-		
+	@RequestMapping("delete4.multi")
+	public void delete(PlaylistVO bag) {
+		dao.delete(bag);
+		System.out.println("delete 요청됨");
+		System.out.println(bag);
 	}
 	
-	@RequestMapping("one3.multi")
+	
+	@RequestMapping("one4.multi")
 	public void one(int id, Model model) {
-		BookDTO bag =dao.one(id);
+		PlaylistVO bag =dao.one(id);
 		model.addAttribute("bag",bag);
 	}
 	
-	@RequestMapping("list3.multi")
+	@RequestMapping("list4.multi")
 	public void list(Model model) {
-		ArrayList<BookDTO> list =dao.list();
+		ArrayList<PlaylistVO> list =dao.list();
 		model.addAttribute("list",list);
 	}
-	
 }

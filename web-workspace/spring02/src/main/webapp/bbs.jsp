@@ -9,6 +9,9 @@
 
 </head>
 <body>
+<a href= "list2.multi">전체 게시글 불러오기</a>
+<hr color = "red">
+
 <h3>게시물 글쓰기 화면입니다.</h3>
 <hr color = "red">
 <form action ="insert2.multi" method="get">
@@ -27,6 +30,7 @@ no: <input name ="no" value="apple"><br>
 content: <input name ="content" value="not tired"><br>
 <button type="submit"> 서버로 전송 </button>
 </form>
+
 
 <hr color = "red">
 <h3>게시물 삭제 화면입니다.</h3>

@@ -9,7 +9,10 @@
 
 </head>
 <body>
-<h3>회원 검색 화면입니다.</h3>
+<h3>회원 검색 화면입니다.(전체)</h3>
+<a href="list.multi" >모든 회원 정보</a>
+<hr color="red">
+<h3>회원 검색 화면입니다.(상세)</h3>
 <hr color="red">
 <form action ="one" method="get">
 id: <input name ="id" value="apple"><br>

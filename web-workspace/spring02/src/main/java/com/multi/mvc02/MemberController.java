@@ -2,6 +2,8 @@ package com.multi.mvc02;
 
 
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,7 +17,7 @@ public class MemberController {
 	//클래스 내에서 기능처리 담당
 	//멤버변수 + 멤버메서드
 	@Autowired
-	MemberDAO3 dao = new MemberDAO3();
+	MemberDAO3 dao;
 	
 	
 	
@@ -61,7 +63,8 @@ public class MemberController {
 	}
 	
 	@RequestMapping("list.multi")
-	public void list() {
-		
+	public void list(Model model) {
+		ArrayList<MemberVO> list = dao.list();
+		model.addAttribute("list",list);	
 	}
 }

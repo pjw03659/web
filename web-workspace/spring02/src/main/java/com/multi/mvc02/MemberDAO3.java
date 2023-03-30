@@ -65,15 +65,8 @@ public class MemberDAO3 { // CRUD
 			// String data = JOptionPane.showInputDialog("이름입력"); //String, 임아무개
 			System.out.println("2. mysql 연결 성공.");
 
-			// ipaddress ==> InetAddress
-			// String url = "http://wwww.naver.com";
-			// URL u = new URL(url);
-			// 자바는 부품조립식이여서,String에 넣은 문자열을 특정한 부품으로 인식하지 못함.
-			// 특정한 부품으로 인식하려면 그 부품으로 만들어주어야 한다.
-			// SQL부품으로 만들어주어야 함.
-			// PreparedStatement가 SQL부품!!
 
-			String sql = "select * from hr.MEMBER";
+			String sql = "select * from member";
 			PreparedStatement ps = con.prepareStatement(sql); // PreparedStatement
 			// 삭제!!!! ps.setString(1, id);
 			System.out.println("3. SQL문 부품(객체)으로 만들어주기 성공.");
@@ -86,15 +79,10 @@ public class MemberDAO3 { // CRUD
 				// System.out.println("검색결과 있음. 성공.");
 				// 2. 각 컬럼에서 값들을 꺼내오자.
 				String id2 = rs.getString(1); // id
-				String pw = rs.getString("pw"); // pw
+				String pw = rs.getString(2); // pw
 				String name = rs.getString(3); // name
 				String tel = rs.getString(4); // tel
-				// System.out.println( id2 + " "
-//									+ pw + " " 
-//									+ name + " " 
-//									+ tel);
-				// 검색결과를 검색화면 UI부분을 주어야 함.
-				// 3. 가방을 만들자.
+				
 				bag = new MemberVO();
 				bag.setId(id2);
 				bag.setPw(pw);

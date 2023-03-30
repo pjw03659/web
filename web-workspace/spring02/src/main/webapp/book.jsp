@@ -7,6 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h3>전체 북마크 </h3>
+<hr color="red">
+<a href ="list3.multi">전체 북마크 검색</a>
+<hr color="red">
 <h3>북마크 등록 화면입니다.</h3>
 <hr color="red">
 <form action ="insert3.multi" method="get">
