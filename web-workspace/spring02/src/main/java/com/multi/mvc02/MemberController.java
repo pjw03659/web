@@ -4,6 +4,8 @@ package com.multi.mvc02;
 
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,10 +24,12 @@ public class MemberController {
 	
 	
 	@RequestMapping("login")
-	public String login(MemberVO bag) {
+	public String login(MemberVO bag, HttpSession session) {
 		System.out.println(bag);
 		int result = dao.login(bag);
 		if(result==1) {
+			session.setAttribute("id", bag.getId());
+			
 			return "ok";
 		} else {
 			return "no";

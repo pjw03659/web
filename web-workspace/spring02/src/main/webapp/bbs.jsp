@@ -1,53 +1,54 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+  pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
-
 </head>
 <body>
-<a href= "list2.multi">전체 게시글 불러오기</a>
-<hr color = "red">
+현재 게시물 조회수 ${count}
 
-<h3>게시물 글쓰기 화면입니다.</h3>
-<hr color = "red">
-<form action ="insert2.multi" method="get">
-no: <input name ="no" value="001"><br>
-title: <input name ="title" value="Tuesday"><br>
-content: <input name ="content" value="tired"><br>
-writer: <input name ="writer" value="park"><br>
-<button type="submit"> 서버로 전송 </button>
+<% if(session.getAttribute("id") != null){ %>
+<h3>게시물등록 화면입니다. </h3>
+<hr color="red">
+<form action="insert2.multi" method="get">
+	no : <input name="no" value="11"><br>
+	title : <input name="title" value="오늘은~"><br>
+	content : <input name="content" value="화요일~"><br>
+	writer : <input name="writer" value="${id}"><br>
+	<button type="submit">서버로 전송</button>
 </form>
-<hr color = "red">
-
-<h3>게시물 수정 화면입니다.</h3>
-<hr color = "red">
-<form action ="update2.multi" method="get">
-no: <input name ="no" value="apple"><br>
-content: <input name ="content" value="not tired"><br>
-<button type="submit"> 서버로 전송 </button>
+<hr color="red">
+<h3>게시물수정 화면입니다. </h3>
+<hr color="red">
+<form action="update2.multi" method="get">
+	no : <input name="no" value="11"><br>
+	content : <input name="content" value="오늘은~"><br>
+	<button type="submit">서버로 전송</button>
 </form>
-
-
-<hr color = "red">
-<h3>게시물 삭제 화면입니다.</h3>
-<hr color = "red">
-<form action ="delete2.multi" method="get">
-no: <input name ="no" value="001"><br>
-<button type="submit"> 서버로 전송 </button>
+<hr color="red">
+<h3>게시물삭제 화면입니다. </h3>
+<hr color="red">
+<form action="delete2.multi" method="get">
+	no : <input name="no" value="11"><br>
+	<button type="submit">서버로 전송</button>
 </form>
-<hr color = "red">
-
-<h3>게시물 검색 화면입니다.</h3>
-<hr color = "red">
-<form action ="one2.multi" method="get">
-no: <input name ="no" value="001"><br>
-<button type="submit"> 서버로 전송 </button>
+<% }else{ %>
+<a href="login.jsp">
+	<button style="background: pink;" >로그인 화면으로 go</button>
+</a>
+<%} %>
+<hr color="red">
+<h3>게시물검색 화면입니다. </h3>
+<a href="list2.multi">모든 게시판 리스트 가지고 오기</a>
+<hr color="red">
+<a href="one2.multi?no=30">30번 검색</a>
+<form action="one2.multi" method="get">
+no : <input name="no" value="30"><br>
+	<button type="submit">서버로 전송</button>
 </form>
-<hr color = "red">
-<button type="button">먹통 버튼(아무기능 없음)</button>
+<hr color="red">
+<button type="button">먹통버튼(아무 기능이 없음)</button>
 </body>
 </html>

@@ -40,7 +40,7 @@ td{
 	<td class="top">content</td>
 	<td class="top">writer</td>
 </tr>
-<c:forEach items="${list}" var="bag" begin="0" end="10" step="2">
+<c:forEach items="${list}" var="bag" >
 <tr>
 	<td class="down">${bag.no}</td>
 	<td class="down">

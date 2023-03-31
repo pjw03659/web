@@ -120,8 +120,8 @@ public class Bbs_DAO {
 			
 				int no2= rs.getInt(1);
 				String title= rs.getString(2);
-				String writer= rs.getString(3);
-				String content= rs.getString(4);
+				String writer= rs.getString(4);
+				String content= rs.getString(3);
 				System.out.println(no2+" "
 								+title+" "
 								+writer+" "
@@ -171,8 +171,8 @@ public class Bbs_DAO {
 			while(rs.next()) { //검색결과가 있는지 여부는 rs.next() 
 				int no2= rs.getInt(1);
 				String title= rs.getString(2);
-				String writer= rs.getString(3);
-				String content= rs.getString(4);
+				String writer= rs.getString(4);
+				String content= rs.getString(3);
 				/*
 				 * System.out.println(no2+" " +title+" " +writer+" " +content+" ");
 				 */

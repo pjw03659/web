@@ -5,15 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style>
-body {
-	background: yellow;
-}
-</style>
 </head>
 <body>
-<h3>${id}님 로그인 성공</h3>
-<hr color="red">
- 
+<%
+	session.setAttribute("view", 100);
+%>
+<hr>서버에 세션 속성등록함. 
+<a href="page04.jsp">session속성가지고오기.jsp</a>
 </body>
 </html>
