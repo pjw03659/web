@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="report">
+	
+	<insert id="create" parameterType="reportVO">
+		insert into report(title,content,category) 
+		values (#{title}, 
+				#{content}, 
+				#{category})
+	</insert>
+	
+	<delete id="del"  parameterType="reportVO">
+		delete from report where no = #{no}
+	</delete>
+	
+	<update id="up"  parameterType="reportVO">
+		update report set title = #{title} where no = #{no}
+	</update>
+	
+	<select id="one" parameterType="Integer" resultType="reportVO">
+		select no,title,content,mem_id,date, view from report
+		where no =#{no}
+	</select>
+	
+	<select id="all" resultType="reportVO">
+		select no, title, content, mem_id, date, view from report
+	</select>
+	
+	<select id="category" parameterType="String" resultType="reportVO">
+		select no, title, content, mem_id, date, view from report
+		where category=#{category}
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
